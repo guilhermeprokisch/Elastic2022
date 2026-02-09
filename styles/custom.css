@@ -1,0 +1,79 @@
+/* Gmail Clone Overrides */
+:root {
+    --gmail-bg: #f6f8fc;
+    --gmail-sidebar-active: #d3e3fd;
+    --gmail-blue: #0b57d0;
+    --gmail-border: #e0e0e0;
+    --gmail-font: #1f1f1f;
+    --gmail-secondary-font: #444746;
+}
+
+body.task-mail {
+    background-color: var(--gmail-bg) !important;
+    color: var(--gmail-font);
+}
+
+/* 2. The Gmail "Compose" Button */
+/* Target the button in templates/includes/menu.html */
+.compose.button div {
+    background-color: #c2e7ff !important; /* Gmail light blue compose */
+    color: #001d35 !important;
+    border-radius: 16px !important; /* Rounded corners */
+    box-shadow: none !important;
+    height: 56px !important;
+    line-height: 56px !important;
+    width: auto !important;
+    min-width: 150px;
+    font-weight: 500;
+    padding: 0 24px !important;
+}
+
+.compose.button div:hover {
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15) !important;
+}
+
+/* 3. Sidebar Pill Shape */
+/* Gmail uses a pill-shaped background for the active folder */
+#mailboxlist li.selected > a {
+    background-color: var(--gmail-sidebar-active) !important;
+    border-radius: 0 24px 24px 0 !important; /* Pill style */
+    color: #041e49 !important;
+}
+
+#mailboxlist li a {
+    margin-right: 8px;
+    height: 32px;
+    line-height: 32px;
+}
+
+/* 4. Message List Density */
+/* Gmail is compact but airy. We remove the borders and add light backgrounds */
+.messagelist tr {
+    background-color: #fff !important;
+    border-bottom: 1px solid var(--gmail-border) !important;
+}
+
+.messagelist tr:hover {
+    box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+    z-index: 1;
+}
+
+.messagelist tr.unread {
+    background-color: #fff !important;
+}
+
+.maillogo_no_select {
+    background-image: url('https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24dp.svg') !important;
+    width: 74px;
+    height: 24px;
+}
+
+/* 5. Search Bar */
+.searchbar {
+    background-color: #eaf1fb !important;
+    border-radius: 24px !important;
+    max-width: 720px;
+    margin: 8px auto !important;
+    border: none !important;
+}
+
